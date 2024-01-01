@@ -1,12 +1,12 @@
 ## Contents
 
-### [1 Overview](#overview)
+### [1. Overview](#overview)
 
 #### [1.1 Problem Statement](#problem-statement)
 #### [1.2 Objective](#objective)
 #### [1.3 Approach](#approach)
 
-### [2 Data Preprocessing and Data Loading](#data-preprocessing-and-data-loading)
+### [2. Data Preprocessing and Data Loading](#data-preprocessing-and-data-loading)
 
 #### [2.1 Replace Duplicate Images](#replace-duplicate-images)
 #### [2.2 Replace Wrong Images](#replace-wrong-images)
@@ -14,7 +14,7 @@
 #### [2.4 Train, Validation, and Test Split](#train-validation-and-test-split)
 #### [2.5 Loading Data into Google Collaboratory](#loading-data-into-google-collaboratory)
 
-[3 Develop the Image Classification Model](#develop-the-image-classification-model)
+### [3. Develop the Image Classification Model](#develop-the-image-classification-model)
 
 #### [3.1 Baseline Model](#baseline-model)
 #### [3.2 Baseline Model with Basic Data Augmentation](#baseline-model-with-basic-data-augmentation)
@@ -29,11 +29,11 @@
 #### [3.11 Using Pre-trained Model with Data Augmentation](#using-pre-trained-model-with-data-augmentation)
 #### [3.12 Fine Tuning Pre-trained Model](#fine-tuning-pre-trained-model)
 
-### [4 Evaluate models using Test Images](#evaluate-models-using-test-images)
+### [4. Evaluate models using Test Images](#evaluate-models-using-test-images)
 
-### [5 Use the Best Model to perform Classification](#use-the-best-model-to-perform-classification)
+### [5. Use the Best Model to perform Classification](#use-the-best-model-to-perform-classification)
 
-### [6 Summary](#summary)
+### [6. Summary](#summary)
 
 #### [6.1 Techniques that improved the model performance](#techniques-that-improved-the-model-performance)
 #### [6.2 Future Improvements](#future-improvements)
@@ -74,89 +74,7 @@ Throughout this process, I tested numerous models and techniques, while document
 
 ## Replace Duplicate Images
 
-While I was creating some models, I explored the dataset by just scrolling through the images, and I realized that there were duplicate images present in the dataset. Duplicate images in the dataset can lead to biases in the model during training. If the same image appears multiple times, the model might excessively learn from these duplicate instances, prioritizing them over other crucial data. This could result in overfitting and reduce the model's ability to generalize well to unseen data. Therefore, I made a Python script to remove duplicate images. The filename of the script is RemoveDuplicates.py and this file is under Code Files/Extras
-
-![A screen shot of a computer program Description automatically generated](media/203934a41db7aaf737172a9f1284e838.png)
-
-![](media/16f69c9c79b4702094a765dd0837cee1.png)
-
-Here are the duplicates that were present in the dataset, and it also shows what image I replaced the duplicate with.
-
-**Grilled Salmon (Train)**
-
-![A plate of grilled salmon Description automatically generated](media/97203c9ac75df2803115c3f4080d5cb4.jpeg)![](media/684841cb19eb625f284464b26d15e93d.png)
-
-![A plate of food with a fork and a piece of meat Description automatically generated](media/921f9fb7648f26f6ffb97204b7a2b4cd.jpeg)![A collage of food on a plate Description automatically generated](media/e44e0632321c156fdd5a84e0d95c1810.png)
-
-18863.jpg
-
-2684.jpg (Replaced)
-
-1574226.jpg
-
-1574235.jpg (Replaced)
-
-**Panna Cotta (Train)**
-
-![A plate of food with strawberries Description automatically generated](media/444ae8f184a264c42d96dba7c1aefbd9.jpeg)**![A close-up of food on a plate Description automatically generated](media/80456057ca663f346235ed0e8ab362a4.png)**
-
-![A plate of desserts with spoons Description automatically generated](media/e058d987c4dadedd32a7bb9d423cbbcd.jpeg)**![A close up of a dessert Description automatically generated](media/d05e43d0f2d9b61828094d37101d7f25.png)**
-
-1565927.jpg
-
-1566367.jpg (Replaced)
-
-2995960.jpg
-
-3011399.jpg (Replaced)
-
-**Beet Salad (Train)**
-
-![A bowl of beets and vegetables Description automatically generated](media/1233f5c7859010ccae5b75b851d04047.jpeg)**![A close up of food Description automatically generated](media/4ab58fa052ef391b89048d2512e88dc2.png)**
-
-2595905.jpg
-
-2671983.jpg (Replaced)
-
-**Beignets (Train)**
-
-![A plate of doughnuts with powdered sugar Description automatically generated](media/961e197c39d691279154161d20b46a9a.jpeg)**![A close-up of a pastry Description automatically generated](media/2e5e0657ed237791f0ddf5ab0a5b57b1.png)**
-
-1996069.jpg
-
-1997437.jpg (Replaced)
-
-**Cupcakes (Train)**
-
-![](media/146c704dc557710e51278c56202b683e.jpeg)**![](media/faf6dccf20885c6e68dcaee70fcea38c.png)**
-
-1044152.jpg
-
-1082593.jpg (Replaced)
-
-**Grilled Salmon (Validation)**
-
-![](media/8e4aa5620181c12bebe2e2d88865753d.jpeg)![A collage of food on a plate Description automatically generated](media/d2830f63ebddb681bb0d07a898337e24.png)
-
-599021.jpg
-
-606368.jpg (Replaced)
-
-**Spaghetti Bolognese (Validation)**
-
-![](media/9a543de1fa4340dae03d478e31d1a84d.jpeg)**![A collage of spaghetti and meat sauce Description automatically generated](media/4bce4810e6d0b710a560d06f4b0a313d.png)**
-
-476276.jpg
-
-585440.jpg (Replaced)
-
-**Greek Salad (Test)**
-
-![](media/ac59b717985d4fc4005623857734a6b1.jpeg)**![](media/81d8821c4bb21ebf019b3207f3816795.png)**
-
-857079.jpg
-
-862426.jpg (Replaced)
+While I was creating some models, I explored the dataset by just scrolling through the images, and I realized that there were duplicate images present in the dataset. Duplicate images in the dataset can lead to biases in the model during training. If the same image appears multiple times, the model might excessively learn from these duplicate instances, prioritizing them over other crucial data. This could result in overfitting and reduce the model's ability to generalize well to unseen data. Therefore, I made a Python script to remove duplicate images. The filename of the script is Remove_Duplicates.py.
 
 ## Replace Wrong Images
 
@@ -164,21 +82,11 @@ While looking at the dataset, I also realized that there were images not related
 
 **Asian Person in Cupcake class**
 
-![A cupcake with pink frosting and flowers Description automatically generated](media/697306a7dcaaa2e371b2a0be42b124fc.jpeg)![A person sitting on a bench Description automatically generated](media/cda7502432b668d052e801d9a2ace7cf.jpeg)
-
-2590269.jpg (Replaced)
-
 Before replacing the Asian person in the cupcake class, I decided to experiment. I ran the model with the Asian person still in the cupcake class and ran a model. Then, I tested the model with an online image of Jimmy O. Yang who is my favorite Asian standup comedian. The model predicted him as a cupcake which is quite hilarious.
-
-![A person in a tuxedo and glasses Description automatically generated](media/5caffd9a8246f446398469a0a11024a9.jpeg)
 
 After cleaning the dataset and replacing the Asian person from the dataset, I trained the same model once more without changing any hyperparameters and architecture and it still predicted Jimmy O. Yang as a cupcake, and I was surprised. One possibility is that there are some similarities between Jimmy O. Yang and cupcakes where both have some related features such as color etc.
 
 **Noodle in Chocolate Mousse class**
-
-![A group of glasses with chocolate pudding and spoons Description automatically generated](media/cad8a118a54538d2d8f6d4f4799634a4.jpeg)![A bowl of noodles and vegetables Description automatically generated](media/900b683b50bfeb51f52d03420e26c923.jpeg)
-
-1561443.jpg (Replaced)
 
 ## Impact of Replacing Duplicate and Wrong Images
 
@@ -224,13 +132,9 @@ I will also be using a callback function called Model Checkpoint which will allo
 
 Here is the model architecture:
 
-![A computer code on a black background Description automatically generated](media/53d33e1907122378fca7c96f806c5bca.png)
-
 Total params: 9683658 (36.94 MB)
 
 Trainable params: 9683658 (36.94 MB)
-
-![A graph of a line Description automatically generated](media/db48a2ff5454861cce63877010c2d303.png)![A graph with blue dots Description automatically generated](media/76e036135ba6db7f944bcd4b40f0f428.png)Non-trainable params: 0 (0.00 Byte)
 
 This baseline model started to overfit right away after the 5th epoch. Based on the training and validation loss, the model's training loss continues to decrease while the validation loss starts increasing after the 5th epoch. What this shows is that the model learns the train images way faster, and it learns to almost 100%. It learns all train images too well, but cannot generalize unseen data. The model checkpoint last saved the model at the 7th epoch where the validation accuracy was 0.518 and the validation loss was 1.4411.
 
@@ -247,23 +151,13 @@ Data augmentation is a technique used to expand a dataset by applying various tr
 -   Zoom range = 0.2
 -   Horizontal flip = True
 
-**![A graph of training and validation Description automatically generated](media/22641ac5197000fcff486373d5d1eb54.png)**
-
-![A graph of a training and validation accuracy Description automatically generated](media/1094ac903c6fefaeed57a42043fce0c9.png)
-
-![A graph of a line Description automatically generated](media/db48a2ff5454861cce63877010c2d303.png)![A graph with blue dots Description automatically generated](media/76e036135ba6db7f944bcd4b40f0f428.png)
-
 The baseline model with data augmentation was able to delay overfitting at around the 20th epoch while without augmentation overfitting occurred at the 5th epoch. As for the best validation accuracy, the model with Data Augmentation had an accuracy of 0.724, and without Data Augmentation had a validation accuracy of 0.518 and this shows a drastic improvement in accuracy after Data Augmentation. So, data augmentation seems to be effective.
 
 ## Reducing Parameters for Model
 
 I have to find a way to reduce the parameters by simplifying the architecture of the model. By analyzing the baseline model architecture, I realized that the fully connected layer with 512 neurons contributes to the greatest number of parameters of close to 9.4 million. Therefore, I have removed that fully connected layer and built a model using only convolution layers. So, in this new architecture, the model will extract features using the convolution layers and after maxpooling and flattening, the features will be directly fed into the softmax activation function.
 
-## ![A screenshot of a computer program Description automatically generated](media/1c304873af5546ddd095cf96917504c0.png)
-
 Here is the model architecture:
-
-**![A screen shot of a computer code Description automatically generated](media/59543281a8d18448b8cea2aaa7d4cd37.png)**
 
 Total params: 425162 (1.62 MB)
 
@@ -277,9 +171,6 @@ I have also changed some hyperparameters compared to the previous model:
 
 -   Epochs - 100 (Want to see how the model performs over a longer epoch)
 -   Optimizer – Adam (Adam usually performs better in CNN
--   ![A graph of training and validation Description automatically generated](media/05e70ae9b55959035769242cbd740596.png)![A graph of a training and validation accuracy Description automatically generated](media/436358f1c7c6aa545ccc96c9dfcf5758.png)Learning Rate – 0.0005
-
-**![A graph of training and validation Description automatically generated](media/22641ac5197000fcff486373d5d1eb54.png)**![A graph of a training and validation accuracy Description automatically generated](media/1094ac903c6fefaeed57a42043fce0c9.png)
 
 The model without the fully connected layer only started to overfit after 40 epochs which is better than the model with the fully connected layer as that model started to overfit after 20 epochs. Moreover, for the model without a fully connected layer, the validation loss began to increase but the gradient wasn’t that high compared to the other model where the gradient of increase in validation loss is higher.
 
@@ -287,9 +178,7 @@ As for the best validation accuracy, the model without a fully connected layer h
 
 ## Tuning Batch Size for Model
 
-![A graph of training and validation Description automatically generated](media/e2cddb95b75a35bf5ac3eb46d3c3feed.png)![A graph of a training and validation accuracy Description automatically generated](media/199fd6771593c4e5b5245775090b5964.png)I have only tested out 2 batch sizes [25, 50]. Based on some research from the paper, “On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima”, the author claims that large batch methods tend to result in models that get stuck in local minima while smaller batches will more likely push out local minima and find the Global Minima, therefore, saying that small batch size is more effective (Nitish., 2017).
-
-![A graph of training and validation Description automatically generated](media/05e70ae9b55959035769242cbd740596.png)![A graph of a training and validation accuracy Description automatically generated](media/436358f1c7c6aa545ccc96c9dfcf5758.png)
+I have only tested out 2 batch sizes [25, 50]. Based on some research from the paper, “On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima”, the author claims that large batch methods tend to result in models that get stuck in local minima while smaller batches will more likely push out local minima and find the Global Minima, therefore, saying that small batch size is more effective (Nitish., 2017).
 
 Based on the training and validation loss graphs, the model with a batch size of 50 starts to overfit after 50 epochs while the model with a batch size of 25 overfits after 40 epochs. However, based on the best validation accuracy, the model with batch size 50 has an accuracy of 0.7572, and the model with batch size 25 has an accuracy of 0.7612. This is a tough decision to make as both batch sizes have their pros and cons but later on, I chose to use batch size 25 as I decided to prioritize accuracy.
 
@@ -304,99 +193,50 @@ I have made 5 different model architectures, and these models have the same hype
 
 1st model architecture
 
-**![A screen shot of a computer code Description automatically generated](media/59543281a8d18448b8cea2aaa7d4cd37.png)**
-
 Total params: 425162 (1.62 MB)
-
 Trainable params: 425162 (1.62 MB)
-
-![A graph of a training and validation accuracy Description automatically generated](media/8b1dae27c28c3e84b077b1aa7fe1e238.png)![A graph of training and validation Description automatically generated](media/b6a9358b28cca45167068efd16c2da55.png)Non-trainable params: 0 (0.00 Byte)
-
 Validation Loss: 0.9483
-
 Validation Accuracy: 0.7612
 
 This 1st model architecture is very basic and yet the validation accuracy is quite high where the best validation accuracy is 0.7612. For this model architecture, overfitting occurs at around the 40th epoch. This basic and simple architecture can perform well in terms of accuracy, but the loss can still be reduced further to further improve the performance of the model.
 
 2nd model architecture
 
-![A screen shot of a computer program Description automatically generated](media/c94a943db3a582e0b2845b8304f7144f.png)
-
 Total params: 1024298 (3.91 MB)
-
 Trainable params: 1024298 (3.91 MB)
-
-Non-trainable params: 0 (0.00 Byte)
-
-![A graph of a training and validation accuracy Description automatically generated](media/4e5abd987623fa5ee57725720439837f.png)![A graph of training and validation Description automatically generated](media/4317697d7463a14819a9489256d13609.png)
-
 Validation Loss: 0.7620
-
 Validation Accuracy: 0.7712
 
 The 2nd model architecture is quite like the 1st model architecture, but the depth of the convolution layers is different as the 2nd model architecture has more 1 more convolution layer than the 1st model architecture. Therefore, the 2nd model architecture can be considered as a deeper network with more layers which increases the complexity due to its repeated convolution layers. The 2nd model architecture also has a greater number of parameters 2.5x more than the 1st model architecture. The complexity of this model was helpful as it allowed the model to perform better than the 1st model architecture as it made the validation loss decrease from 0.9483 to 0.7620. Therefore, the 2nd model architecture is outstanding.
 
 3rd model architecture
 
-![A screen shot of a computer program Description automatically generated](media/6650398e97899f15119b84275e50cacb.png)
-
 Total params: 1428266 (5.45 MB)
-
 Trainable params: 1428266 (5.45 MB)
-
-Non-trainable params: 0 (0.00 Byte)
-
-![A graph of training and validation Description automatically generated](media/cbf35395776ba16cac7971f9a6d1db35.png)
-
-![A graph of a training and validation accuracy Description automatically generated](media/e2426c481c193a2424857d6b50e85852.png)
-
 Validation Loss: 0.9221
-
 Validation Accuracy: 0.7357
 
 The 3rd model architecture has 2 additional convolution layers of 256 filters and corresponding MaxPooling2D layers compared to the 2nd model architecture. The thought process when creating this model is to increase the complexity of the model so that it can capture more intricate patterns in the images compared to the 2nd model architecture. However, after running the model, it shows that the 3rd model architecture resulted in a decrease in the model performance compared to the 2nd model architecture. Based on the chart, the model started to overfit slightly only after the 50th epoch and this is better compared to the 2nd model architecture as that model overfitted faster at around the 40th epoch. But the 3rd model architecture had a higher validation loss and lower validation accuracy than the 2nd model architecture which shows that the 3rd model architecture is not great. This experiment shows that sometimes, a complex architecture might not be suitable for the given problem. A simpler architecture might be more effective in capturing the relevant features or patterns within the dataset.
 
 4th model architecture
 
-![A screen shot of a computer program Description automatically generated](media/99c54a6af9755ce5509d995a30535dae.png)
-
 Total params: 2434346 (9.29 MB)
-
 Trainable params: 2434346 (9.29 MB)
-
-Non-trainable params: 0 (0.00 Byte)
-
-![A graph of training and validation Description automatically generated](media/696615af556332b22b0f48fe18e1e53b.png)![A graph of a training and validation accuracy Description automatically generated](media/110c51ca550025d1f9ed4a72d6d66596.png)
-
 Validation Loss: 1.023
-
 Validation Accuracy: 0.7482
 
 The 4th model architecture has 1 additional convolution layer of 512 filters and corresponding MaxPooling2D layers compared to the 3rd model architecture. The purpose of increasing the complexity of the model is just to document what are the results. Compared to the 3rd model architecture, the 4th model architecture seemed to improve the validation accuracy, but this model still didn’t achieve a better result than the 2nd model architecture. However, in terms of validation loss, this model performed poorly than both the 2nd and 3rd model architecture. Therefore, I would not be making any more complex models based on the dataset and features extracted, a model architecture with smaller parameters and a simpler network tends to perform better.
 
 5th model architecture
 
-![A screen shot of a computer program Description automatically generated](media/73896a5fb4d0679da827a03ebf2939a3.png)
-
 Total params: 1863338 (7.11 MB)
-
 Trainable params: 1863338 (7.11 MB)
-
-Non-trainable params: 0 (0.00 Byte)
-
-![A graph of training and validation Description automatically generated](media/4f6909de5033378aee97a4adff8f2b1e.png)![A graph of a graph Description automatically generated with medium confidence](media/317656bb9b22a708288bcefcab9b6fbe.png)
-
 Validation Loss: 0.9144
-
 Validation Accuracy: 0.7045
 
 \*I could only run the model till the 50th epoch as my Google Collab Compute Units were going low
 
-The 5th model architecture has fewer convolution layers compared to the 2nd model architecture and yet it has larger parameters than the 2nd model. This experiment made me realize that the total number of parameters in a neural network is not solely determined by the number of layers but it's influenced by various factors like layer configurations, input shapes, etc. As a result, a seemingly simpler architecture of model 5 might have more parameters than expected due to specific layer settings or transformations within the network. Now to compare the output of the model, it will not be fair to compare this model to the 2nd model architecture as that was run till the 100th epoch. Therefore, to be fair, I will compare the validation accuracy and loss to the 2nd model architecture when it was in the 50th epoch.
-
-![](media/3776d2737ab2749f75fe07b03c792f6d.png)
-
-For the 2nd model architecture when it was at the 50th epoch, it had a validation accuracy of 0.7335 and validation loss of 0.8248 and this is better than the 5th model architecture’s validation accuracy and loss at the 5th epoch.
+The 5th model architecture has fewer convolution layers compared to the 2nd model architecture and yet it has larger parameters than the 2nd model. This experiment made me realize that the total number of parameters in a neural network is not solely determined by the number of layers but it's influenced by various factors like layer configurations, input shapes, etc. As a result, a seemingly simpler architecture of model 5 might have more parameters than expected due to specific layer settings or transformations within the network. Now to compare the output of the model, it will not be fair to compare this model to the 2nd model architecture as that was run till the 100th epoch. Therefore, to be fair, I will compare the validation accuracy and loss to the 2nd model architecture when it was in the 50th epoch.For the 2nd model architecture when it was at the 50th epoch, it had a validation accuracy of 0.7335 and validation loss of 0.8248 and this is better than the 5th model architecture’s validation accuracy and loss at the 5th epoch.
 
 Conclusion
 
@@ -406,29 +246,23 @@ Based on all the experiments, model 2 architecture proved to work the best for t
 
 Once I finalize my model architecture, it is time to tune the learning rate. In this experiment, I have tested out the following learning rates, 0.0005, 0.001, and 1e-5. I have also experimented with learning rate schedulers, specifically step decay.
 
-![A graph of a training and validation accuracy Description automatically generated](media/4e5abd987623fa5ee57725720439837f.png)![A graph of training and validation Description automatically generated](media/4317697d7463a14819a9489256d13609.png)
+
 
 Validation Loss: 0.7620
-
 Validation Accuracy: 0.7712
 
-![A graph of training and validation Description automatically generated](media/42a3e46d81ea02de8185bcb7ed8c6e9a.png)
-
-![A graph of a training and validation accuracy Description automatically generated](media/a9865f99ef43c8cf9a2b379527c2d3a4.png)
 
 Validation Loss: 1.1648
-
 Validation Accuracy: 0.7015
 
-**![A graph of training and validation Description automatically generated](media/5be5bc8b1fba56ae32b29c7054b7f7ca.png)**![A graph of a training and validation accuracy Description automatically generated](media/af2ab070c4b278cad0670272e0494a4d.png)
-
 Validation Loss: 1.5841
-
 Validation Accuracy: 0.4630
 
 Based on all the charts and metrics, it looks like a learning rate of 0.0005 is the most appropriate compared to the other learning rates.
 
-![A drawing of a circular object Description automatically generated](media/0ea624cd76de253762378a62f09fcae0.png)I have also done some exploration and learned about learning rate schedulers and learning rate decay. What learning rate decay does is that it trains the network with a large learning rate and then slowly reduces it until local minima is obtained.
+I have also done some exploration and learned about learning rate schedulers and learning rate decay. What learning rate decay does is that it trains the network with a large learning rate and then slowly reduces it until local minima is obtained.
+
+![image](https://github.com/Pranav-Vijitharan/Food-Classification-Model/assets/122760008/e6827464-44a8-483f-a31a-89870742e851)
 
 The image above (Vaibhav,. 2020) shows two lines. The blue line uses a constant learning rate and usually, the steps taken by our algorithm while iterating towards minima are so noisy that after certain iterations it seems to wander around the minima and does not converge. The green line uses a learning decay algorithm and what it shows is that since the learning rate is large initially it has relatively fast learning but as it tends towards minima learning rate gets smaller and smaller and ends up oscillating in a tighter region around minima rather than wandering far away from it.
 
