@@ -1,42 +1,43 @@
-## Contents
+# Contents
 
-### [1. Overview](#overview)
+## [1. Overview](#overview)
 
-#### [1.1 Problem Statement](#problem-statement)
-#### [1.2 Objective](#objective)
-#### [1.3 Approach](#approach)
+### [1.1 Problem Statement](#problem-statement)
+### [1.2 Objective](#objective)
+### [1.3 Approach](#approach)
 
-### [2. Data Preprocessing and Data Loading](#data-preprocessing-and-data-loading)
+## [2. Data Preprocessing and Data Loading](#data-preprocessing-and-data-loading)
 
-#### [2.1 Replace Duplicate Images](#replace-duplicate-images)
-#### [2.2 Replace Wrong Images](#replace-wrong-images)
-#### [2.3 Impact of Replacing Duplicate and Wrong Images](#impact-of-replacing-duplicate-and-wrong-images)
-#### [2.4 Train, Validation, and Test Split](#train-validation-and-test-split)
-#### [2.5 Loading Data into Google Collaboratory](#loading-data-into-google-collaboratory)
+### [2.1 Replace Duplicate Images](#replace-duplicate-images)
+### [2.2 Replace Wrong Images](#replace-wrong-images)
+### [2.3 Impact of Replacing Duplicate and Wrong Images](#impact-of-replacing-duplicate-and-wrong-images)
+### [2.4 Train, Validation, and Test Split](#train-validation-and-test-split)
+### [2.5 Loading Data into Google Collaboratory](#loading-data-into-google-collaboratory)
 
-### [3. Develop the Image Classification Model](#develop-the-image-classification-model)
+## [3. Develop the Image Classification Model](#develop-the-image-classification-model)
 
-#### [3.1 Baseline Model](#baseline-model)
-#### [3.2 Baseline Model with Basic Data Augmentation](#baseline-model-with-basic-data-augmentation)
-#### [3.3 Reducing Parameters for Model](#reducing-parameters-for-model)
-#### [3.4 Tuning Batch Size for Model](#tuning-batch-size-for-model)
-#### [3.5 Tuning Model Architecture](#tuning-model-architecture)
-#### [3.6 Tuning Learning Rate](#tuning-learning-rate)
-#### [3.7 Performing Advanced Augmentation Techniques](#performing-advanced-augmentation-techniques)
-#### [3.8 Performing L1 & L2 Regularization](#performing-l1--l2-regularization)
-#### [3.9 Adding Dropouts to Model](#adding-dropouts-to-model)
-#### [3.10 Using Pre-trained Model without Data Augmentation](#using-pre-trained-model-without-data-augmentation)
-#### [3.11 Using Pre-trained Model with Data Augmentation](#using-pre-trained-model-with-data-augmentation)
-#### [3.12 Fine Tuning Pre-trained Model](#fine-tuning-pre-trained-model)
+### [3.1 Baseline Model](#baseline-model)
+### [3.2 Baseline Model with Basic Data Augmentation](#baseline-model-with-basic-data-augmentation)
+### [3.3 Reducing Parameters for Model](#reducing-parameters-for-model)
+### [3.4 Tuning Batch Size for Model](#tuning-batch-size-for-model)
+### [3.5 Tuning Model Architecture](#tuning-model-architecture)
+### [3.6 Tuning Learning Rate](#tuning-learning-rate)
+### [3.7 Performing Advanced Augmentation Techniques](#performing-advanced-augmentation-techniques)
+### [3.8 Performing L1 & L2 Regularization](#performing-l1--l2-regularization)
+### [3.9 Adding Dropouts to Model](#adding-dropouts-to-model)
+### [3.10 Using Pre-trained Model without Data Augmentation](#using-pre-trained-model-without-data-augmentation)
+### [3.11 Using Pre-trained Model with Data Augmentation](#using-pre-trained-model-with-data-augmentation)
+### [3.12 Fine Tuning Pre-trained Model](#fine-tuning-pre-trained-model)
 
-### [4. Evaluate models using Test Images](#evaluate-models-using-test-images)
+## [4. Evaluate models using Test Images](#evaluate-models-using-test-images)
 
-### [5. Use the Best Model to perform Classification](#use-the-best-model-to-perform-classification)
+## [5. Use the Best Model to perform Classification](#use-the-best-model-to-perform-classification)
 
-### [6. Summary](#summary)
+## [6. Summary](#summary)
 
-#### [6.1 Techniques that improved the model performance](#techniques-that-improved-the-model-performance)
-#### [6.2 Future Improvements](#future-improvements)
+### [6.1 Techniques that improved the model performance](#techniques-that-improved-the-model-performance)
+### [6.2 Future Improvements](#future-improvements)
+
 
 # Overview
 
@@ -75,6 +76,9 @@ Throughout this process, I tested numerous models and techniques, while document
 ## Replace Duplicate Images
 
 While I was creating some models, I explored the dataset by just scrolling through the images, and I realized that there were duplicate images present in the dataset. Duplicate images in the dataset can lead to biases in the model during training. If the same image appears multiple times, the model might excessively learn from these duplicate instances, prioritizing them over other crucial data. This could result in overfitting and reduce the model's ability to generalize well to unseen data. Therefore, I made a Python script to remove duplicate images. The filename of the script is Remove_Duplicates.py.
+
+![Python script to remove duplicates](https://github.com/Pranav-Vijitharan/Food-Classification-Model/assets/122760008/baa3adb8-e789-4790-922e-0dac51666b98)
+
 
 ## Replace Wrong Images
 
